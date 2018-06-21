@@ -1,6 +1,9 @@
 # CodeUI
 This is a simple way to organize your UI from code only without using any Storyboards or XIBs for those who hates them as much as I
 
+# DISCLAIMER
+This is **WIP** lib. A lot of things can change in time. Any proposals are welcome.
+
 ## Requirements
 You need to use CUIViewController as your superclass for your UIVIewController subclasses
 
@@ -35,3 +38,6 @@ After that every view will have a `cui` property to call where you will find ton
 ### NOTE
 
 For `.iPhoneSideover`, `.iPhonePlusSideover`, `.iPadHalf`, `.iPadSideover`, `.iPadSideover10_5`, `.iPadSideoverPro`, `.iPhoneHalf` orientation is always `.portrait`
+
+## Example
+You can find example in CodeUI/CoudeUI-Example directory. Though it is not very big right now, it can show you the basics.
