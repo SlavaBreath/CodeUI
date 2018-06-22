@@ -45,18 +45,19 @@ extension CGSize {
         case .iPhoneOriginal, .iPhoneOriginalLandscape: return .iPhoneOriginal
         case .iPhonePlus, .iPhonePlusLandscape: return .iPhonePlus
         case .iPhoneX, .iPhoneXLandscape: return .iPhoneX
-        case .iPadSideoveriPhonePortrait, .iPadSideoveriPhoneLandscape: return .iPhoneSideover
-        case .iPadProSideoveriPhonePortrait, .iPadProSideoveriPhoneLandscape: return .iPhonePlusSideover
-        case .iPadHalfiPhone, .iPad10_5HalfiPhone: return .iPhoneHalf
+        case .iPhoneSideoverSmallPortrait, .iPhoneSideoverSmallLandscape,
+             .iPhoneSideoverMediumPortrait, .iPhoneSideoverMediumLandscape: return .iPhoneSideover
+        case .iPhoneSideoverLargePortrait, .iPhoneSideoverLargeLandscape: return .iPhonePlusSideover
+        case .iPadSmallHalf, .iPadMediumHalf: return .iPhoneHalf
             
             // iPad
         case .iPad, .iPadLandscape: return .iPadSmall
         case .iPad10_5, .iPad10_5Landscape: return .iPadMedium
         case .iPadPro, .iPadProLandscape: return .iPadLarge
-        case .iPadProHalfiPad: return .iPadSideover
-        case .iPadSideoveriPadPortrait, .iPadSideoveriPadLandscape: return .iPadSideover10_5
-        case .iPad10_5SideoveriPadPortrait, .iPad10_5SideoveriPadPortrait: return .iPadSideoverPro
-        case .iPadProSideoveriPadPortrait, .iPadProSideoveriPadLandscape: return .iPadHalf
+        case .iPadSideoverSmallPortrait, .iPadSideoverSmallLandscape: return .iPadSideover
+        case .iPadSideoverMediumPortrait, .iPadSideoverMediumLandscape: return .iPadSideover10_5
+        case .iPadSideoverLargePortrait, .iPadSideoverLargeLandscape: return .iPadSideoverPro
+        case .iPadLargeHalf: return .iPadHalf
             
         default: return .iPhoneOriginal
         }
