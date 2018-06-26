@@ -16,10 +16,18 @@ public class CodeUI {
     /// App window to get initial sizes from
     public var window: UIWindow?
     
+    public var constraint: NSLayoutConstraint {
+        if let lastCreatedConstraint = lastCreatedConstraint {
+            return lastCreatedConstraint
+        }
+        fatalError("You have not created any constraints for current target view yet")
+    }
+    
     private var layouts = [UIView: ViewLayout]()
     private var targetView: UIView?
     private var targetConfiguration: Configuration = .default
     private var pendingConfiguration: Configuration?
+    private var lastCreatedConstraint: NSLayoutConstraint?
     
     /// Set view as target for constraits
     ///
@@ -28,6 +36,7 @@ public class CodeUI {
     @discardableResult
     func `for`(_ view: UIView) -> Self {
         targetView = view
+        lastCreatedConstraint = nil
         return self
     }
     
@@ -136,6 +145,8 @@ public class CodeUI {
         }
         
         layouts[v]!.add(targetConfiguration, constraint: constraint)
+        
+        lastCreatedConstraint = constraint
     }
 }
 
