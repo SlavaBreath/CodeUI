@@ -18,16 +18,6 @@
 		F99651E020DC349F004C44BB /* CodeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651DF20DC349F004C44BB /* CodeUI.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F996520320DC4107004C44BB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F99651FF20DC4106004C44BB /* CodeUI-Example.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F99651EA20DC4104004C44BB;
-			remoteInfo = "CodeUI-Example";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		F99651C220DC33F3004C44BB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -51,7 +41,6 @@
 		F99651D820DC3460004C44BB /* ScreenSizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSizes.swift; sourceTree = "<group>"; };
 		F99651D920DC3460004C44BB /* CUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CUIViewController.swift; sourceTree = "<group>"; };
 		F99651DF20DC349F004C44BB /* CodeUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeUI.swift; sourceTree = "<group>"; };
-		F99651FF20DC4106004C44BB /* CodeUI-Example.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CodeUI-Example.xcodeproj"; path = "CodeUI-Example/CodeUI-Example.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +57,6 @@
 		F99651BB20DC33F3004C44BB = {
 			isa = PBXGroup;
 			children = (
-				F99651FF20DC4106004C44BB /* CodeUI-Example.xcodeproj */,
 				F99651C620DC33F3004C44BB /* CodeUI */,
 				F99651C520DC33F3004C44BB /* Products */,
 			);
@@ -104,14 +92,6 @@
 				F99651CF20DC3451004C44BB /* Orientation.swift */,
 			);
 			path = Configuration;
-			sourceTree = "<group>";
-		};
-		F996520020DC4106004C44BB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F996520420DC4107004C44BB /* CodeUI-Example.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,28 +139,12 @@
 			mainGroup = F99651BB20DC33F3004C44BB;
 			productRefGroup = F99651C520DC33F3004C44BB /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = F996520020DC4106004C44BB /* Products */;
-					ProjectRef = F99651FF20DC4106004C44BB /* CodeUI-Example.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				F99651C320DC33F3004C44BB /* CodeUI */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		F996520420DC4107004C44BB /* CodeUI-Example.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "CodeUI-Example.app";
-			remoteRef = F996520320DC4107004C44BB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F99651C020DC33F3004C44BB /* Sources */ = {
