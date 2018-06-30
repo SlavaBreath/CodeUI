@@ -29,6 +29,14 @@ public class CodeUI {
     private var pendingConfiguration: Configuration?
     private var lastCreatedConstraint: NSLayoutConstraint?
     
+    /// This removes all layouts for passed view and all it's subviews
+    ///
+    /// - Parameter view: view with it's subviews layouts are going to be removed for
+    func removeViews(_ view: UIView) {
+        layouts.removeValue(forKey: view)
+        view.subviews.forEach { removeViews($0) }
+    }
+    
     /// Set view as target for constraits
     ///
     /// - Parameter view: view that is current target for constraints

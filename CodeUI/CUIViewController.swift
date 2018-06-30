@@ -10,9 +10,9 @@ import UIKit
 
 open class CUIViewController: UIViewController {
     open override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
         CodeUI.shared.activate()
+        
+        super.viewWillLayoutSubviews()
     }
     
     open override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -25,5 +25,9 @@ open class CUIViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         
         CodeUI.shared.adoptToNewSize(CGSize(width: size.width * UIScreen.main.scale, height: size.height * UIScreen.main.scale))
+    }
+    
+    deinit {
+        CodeUI.shared.removeViews(view)
     }
 }

@@ -38,3 +38,21 @@ enum Configuration: Hashable {
         }
     }
 }
+
+extension Configuration: CustomStringConvertible {
+    var description: String {
+        if orientation == .any {
+            if size == .any {
+                return "all"
+            } else if size == .iPhones {
+                return "all iPhones"
+            } else if size == .iPads {
+                return "all iPads"
+            }
+            
+            return size.description
+        } else {
+            return "sizes: \(size), orientations: \(orientation)"
+        }
+    }
+}
