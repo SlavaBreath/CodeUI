@@ -13,19 +13,31 @@ public class CodeUI {
     /// Shared instance of CodeUI
     public static let shared = CodeUI()
     
+    /// Private init for swizzling
+    private init() {
+        UIViewController.swizzle
+        UIView.swizzle
+    }
+    
     /// App window to get initial sizes from
     public var window: UIWindow?
     
-    public var constraint: NSLayoutConstraint {
-        if let lastCreatedConstraint = lastCreatedConstraint {
-            return lastCreatedConstraint
+    /// Current configuration for constraints
+    var targetConfiguration: Configuration = .default
+    
+    /// Configuration that device is going to change to
+    var configuration: Configuration? {
+        get {
+            if pendingConfiguration == nil {
+                return window?.configuration
+            }
+            return pendingConfiguration
         }
-        fatalError("You have not created any constraints for current target view yet")
+        set { }
     }
     
     private var layouts = [UIView: ViewLayout]()
     private var targetView: UIView?
-    private var targetConfiguration: Configuration = .default
     private var pendingConfiguration: Configuration?
     private var lastCreatedConstraint: NSLayoutConstraint?
     
@@ -118,35 +130,6 @@ public class CodeUI {
     /// - Parameter size: new size of screen
     func adoptToNewSize(_ size: CGSize) {
         pendingConfiguration = .device(size: size.iOSDeviceSize, orientation: size.orientation)
-    }
-    
-    /// Changes UI according to new configuration
-    ///
-    /// Please note: This func deactivates all unsatisfalable constrains
-    /// and only then activates new ones.
-    func activate() {
-        if pendingConfiguration == nil {
-            pendingConfiguration = window?.configuration
-        }
-        
-        guard let pendingConfiguration = pendingConfiguration else { return }
-        
-        layouts.values.forEach { $0.deactivate(for: pendingConfiguration) }
-        layouts.values.forEach { $0.activate(for: pendingConfiguration) }
-    }
-    
-    /// Add new constraint for current configuration
-    ///
-    /// - Parameter constraint: New constraint to add
-    private func addConstraint(_ constraint: NSLayoutConstraint) {
-        guard let v = targetView else { return }
-        if layouts[v] == nil {
-            layouts[v] = ViewLayout()
-        }
-        
-        layouts[v]!.add(targetConfiguration, constraint: constraint)
-        
-        lastCreatedConstraint = constraint
     }
 }
 
@@ -252,7 +235,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.leadingAnchor, to: anchor, relation: relation, constant: constant)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }
@@ -275,7 +258,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.trailingAnchor, to: anchor, relation: relation, constant: -constant)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }
@@ -298,7 +281,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.leftAnchor, to: anchor, relation: relation, constant: constant)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }
@@ -321,7 +304,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.rightAnchor, to: anchor, relation: relation, constant: -constant)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }
@@ -344,7 +327,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.topAnchor, to: anchor, relation: relation, constant: constant)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }
@@ -367,7 +350,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.bottomAnchor, to: anchor, relation: relation, constant: -constant)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }
@@ -390,7 +373,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.centerXAnchor, to: anchor, relation: relation, constant: constant)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }
@@ -413,7 +396,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.centerYAnchor, to: anchor, relation: relation, constant: constant)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }
@@ -438,7 +421,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.widthAnchor, to: anchor, relation: relation, constant: constant, multiplier: multiplier)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }
@@ -463,7 +446,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.heightAnchor, to: anchor, relation: relation, constant: constant, multiplier: multiplier)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }
@@ -486,7 +469,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.firstBaselineAnchor, to: anchor, relation: relation, constant: constant)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }
@@ -509,7 +492,7 @@ extension CodeUI {
         let constraint = createConstraint(myAnchor: v.lastBaselineAnchor, to: anchor, relation: relation, constant: constant)
         constraint.priority = priority
         
-        addConstraint(constraint)
+        targetView?.addConstraint(constraint)
         
         return self
     }

@@ -9,7 +9,7 @@
 import UIKit
 import CodeUI
 
-class ViewController: CUIViewController {
+class ViewController: UIViewController {
     private let firstView: UIView = {
         let v = UIView()
         v.backgroundColor = .orange

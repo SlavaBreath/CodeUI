@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7B13E2720F3849400FF908A /* UIViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13E2620F3849400FF908A /* UIViewLayout.swift */; };
 		F99651D220DC3451004C44BB /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651CF20DC3451004C44BB /* Orientation.swift */; };
 		F99651D320DC3451004C44BB /* iOSDeviceSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651D020DC3451004C44BB /* iOSDeviceSize.swift */; };
 		F99651D420DC3451004C44BB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651D120DC3451004C44BB /* Configuration.swift */; };
@@ -14,7 +15,7 @@
 		F99651DB20DC3460004C44BB /* OptionSetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651D620DC3460004C44BB /* OptionSetExtension.swift */; };
 		F99651DC20DC3460004C44BB /* UIWindowConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651D720DC3460004C44BB /* UIWindowConfiguration.swift */; };
 		F99651DD20DC3460004C44BB /* ScreenSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651D820DC3460004C44BB /* ScreenSizes.swift */; };
-		F99651DE20DC3460004C44BB /* CUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651D920DC3460004C44BB /* CUIViewController.swift */; };
+		F99651DE20DC3460004C44BB /* ViewControllerSwizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651D920DC3460004C44BB /* ViewControllerSwizzle.swift */; };
 		F99651E020DC349F004C44BB /* CodeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651DF20DC349F004C44BB /* CodeUI.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B7B13E2620F3849400FF908A /* UIViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLayout.swift; sourceTree = "<group>"; };
 		F99651C420DC33F3004C44BB /* libCodeUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCodeUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99651CF20DC3451004C44BB /* Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		F99651D020DC3451004C44BB /* iOSDeviceSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSDeviceSize.swift; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 		F99651D620DC3460004C44BB /* OptionSetExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSetExtension.swift; sourceTree = "<group>"; };
 		F99651D720DC3460004C44BB /* UIWindowConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowConfiguration.swift; sourceTree = "<group>"; };
 		F99651D820DC3460004C44BB /* ScreenSizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSizes.swift; sourceTree = "<group>"; };
-		F99651D920DC3460004C44BB /* CUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CUIViewController.swift; sourceTree = "<group>"; };
+		F99651D920DC3460004C44BB /* ViewControllerSwizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSwizzle.swift; sourceTree = "<group>"; };
 		F99651DF20DC349F004C44BB /* CodeUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeUI.swift; sourceTree = "<group>"; };
 		F99651FF20DC4106004C44BB /* CodeUI-Example.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CodeUI-Example.xcodeproj"; path = "CodeUI-Example/CodeUI-Example.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,7 +89,8 @@
 			children = (
 				F99651CE20DC3451004C44BB /* Configuration */,
 				F99651DF20DC349F004C44BB /* CodeUI.swift */,
-				F99651D920DC3460004C44BB /* CUIViewController.swift */,
+				B7B13E2620F3849400FF908A /* UIViewLayout.swift */,
+				F99651D920DC3460004C44BB /* ViewControllerSwizzle.swift */,
 				F99651D620DC3460004C44BB /* OptionSetExtension.swift */,
 				F99651D820DC3460004C44BB /* ScreenSizes.swift */,
 				F99651D720DC3460004C44BB /* UIWindowConfiguration.swift */,
@@ -189,7 +192,8 @@
 			files = (
 				F99651DD20DC3460004C44BB /* ScreenSizes.swift in Sources */,
 				F99651DA20DC3460004C44BB /* ViewLayout.swift in Sources */,
-				F99651DE20DC3460004C44BB /* CUIViewController.swift in Sources */,
+				B7B13E2720F3849400FF908A /* UIViewLayout.swift in Sources */,
+				F99651DE20DC3460004C44BB /* ViewControllerSwizzle.swift in Sources */,
 				F99651D420DC3451004C44BB /* Configuration.swift in Sources */,
 				F99651D320DC3451004C44BB /* iOSDeviceSize.swift in Sources */,
 				F99651D220DC3451004C44BB /* Orientation.swift in Sources */,
