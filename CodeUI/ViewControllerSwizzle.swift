@@ -39,7 +39,7 @@ extension UIViewController {
     
     @objc func cui_viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         self.cui_viewWillTransition(to: size, with: coordinator)
-        CodeUI.shared.adoptToNewSize(UIScreen.main.nativeBounds.size)
+        CodeUI.shared.adoptToNewSize(CGSize(width: size.width * UIScreen.main.scale, height: size.height * UIScreen.main.scale))
     }
 }
 
@@ -58,6 +58,8 @@ extension UIView {
     
     private func activate() {
         guard let configuration = CodeUI.shared.configuration else { return }
+        
+        print("\(layout)\n\n")
         
         layout.deactivate(for: configuration)
         layout.activate(for: configuration)

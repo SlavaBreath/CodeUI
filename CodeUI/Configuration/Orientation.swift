@@ -20,6 +20,16 @@ public struct Orientation: OptionSet, Hashable {
     public static let any: Orientation = [.portrait, .landscape]
 }
 
+extension Orientation: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .portrait: return "portrait"
+        case .landscape: return "landscape"
+        default: return "any orientation"
+        }
+    }
+}
+
 extension CGSize {
     var orientation: Orientation {
         return width > height ? .landscape : .portrait

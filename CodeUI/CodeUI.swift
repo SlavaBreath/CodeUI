@@ -27,13 +27,7 @@ public class CodeUI {
     
     /// Configuration that device is going to change to
     var configuration: Configuration? {
-        get {
-            if pendingConfiguration == nil {
-                return window?.configuration
-            }
-            return pendingConfiguration
-        }
-        set { }
+        return pendingConfiguration ?? window?.configuration
     }
     
     private var layouts = [UIView: ViewLayout]()

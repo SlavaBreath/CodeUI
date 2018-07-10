@@ -29,3 +29,18 @@ struct ViewLayout {
         layoutsToActivate.values.forEach { $0.forEach { $0.isActive = true } }
     }
 }
+
+extension ViewLayout: CustomStringConvertible {
+    var description: String {
+        var result = ""
+        for config in layout {
+            result += "\(config.key)\n"
+            for constraint in config.value {
+                result += "\(constraint)\n"
+            }
+            result += "\n"
+        }
+        
+        return result
+    }
+}

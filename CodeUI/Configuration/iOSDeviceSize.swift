@@ -37,6 +37,82 @@ public struct iOSDeviceSize: OptionSet, Hashable {
     public static let any: iOSDeviceSize = [iPhones, iPads]
 }
 
+extension iOSDeviceSize: CustomStringConvertible {
+    public var description: String {
+        var devices = [String]()
+        
+        if self == .any {
+            return "any size"
+        }
+        
+        if self == .iPhones {
+            devices.append("all iPhones")
+        } else {
+            if contains(.iPhoneSmall) {
+                devices.append("iPhoneSmall")
+            }
+            
+            if contains(.iPhoneOriginal) {
+                devices.append("iPhoneOriginal")
+            }
+            
+            if contains(.iPhonePlus) {
+                devices.append("iPhonePlus")
+            }
+            
+            if contains(.iPhoneX) {
+                devices.append("iPhoneX")
+            }
+            
+            if contains(.iPhoneSideover) {
+                devices.append("iPhoneSideover")
+            }
+            
+            if contains(.iPhonePlusSideover) {
+                devices.append("iPhonePlusSideover")
+            }
+        }
+        
+        if self == .iPads {
+            devices.append("all iPads")
+        } else {
+            if contains(.iPhoneHalf) {
+                devices.append("iPhoneHalf")
+            }
+            
+            if contains(.iPadSmall) {
+                devices.append("iPadSmall")
+            }
+            
+            if contains(.iPadMedium) {
+                devices.append("iPadMedium")
+            }
+            
+            if contains(.iPadLarge) {
+                devices.append("iPadLarge")
+            }
+            
+            if contains(.iPadSideover) {
+                devices.append("iPadSideover")
+            }
+            
+            if contains(.iPadSideover10_5) {
+                devices.append("iPadSideover10_5")
+            }
+            
+            if contains(.iPadSideoverPro) {
+                devices.append("iPadSideoverPro")
+            }
+            
+            if contains(.iPadHalf) {
+                devices.append("iPadHalf")
+            }
+        }
+        
+        return devices.joined(separator: ", ")
+    }
+}
+
 extension CGSize {
     var iOSDeviceSize: iOSDeviceSize {
         switch self {
