@@ -28,7 +28,7 @@ final class ThirdViewController: BaseViewController {
         
         view.add([topView, bottomView])
         
-        topView.cui.anchor(leading: view.leadingAnchor, top: view.topAnchor, trailing: view.trailingAnchor, inset: 0)
-        bottomView.cui.anchor(leading: view.safeAreaLayoutGuide.leadingAnchor, top: topView.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, inset: 0).height(topView.heightAnchor)
+        topView.cui.anchor(leading: view, top: view, trailing: view, inset: 0)
+        bottomView.cui.anchor(leading: view.safeAreaLayoutGuide, top: topView.bottomAnchor, trailing: view.safeAreaLayoutGuide, bottom: view.safeAreaLayoutGuide, inset: 0).height(topView)
     }
 }

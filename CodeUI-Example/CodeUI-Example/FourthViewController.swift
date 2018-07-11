@@ -28,24 +28,12 @@ final class FourthViewController: BaseViewController {
         
         view.add([topLeftView, bottomRightView])
         
-        topLeftView.cui
-            .leading(view.safeAreaLayoutGuide.leadingAnchor, constant: 8)
-            .top(view.safeAreaLayoutGuide.topAnchor, constant: 8)
-            .portrait()
-            .trailing(view.safeAreaLayoutGuide.trailingAnchor, constant: 8)
-            .landscape()
-            .bottom(view.safeAreaLayoutGuide.bottomAnchor, constant: 8)
+        topLeftView.cui.anchor(leading: view.safeAreaLayoutGuide, top: view.safeAreaLayoutGuide, inset: 8)
+            .portrait().trailing(view.safeAreaLayoutGuide, constant: 8)
+            .landscape().bottom(view.safeAreaLayoutGuide, constant: 8)
         
-        bottomRightView.cui
-            .trailing(view.safeAreaLayoutGuide.trailingAnchor, constant: 8)
-            .bottom(view.safeAreaLayoutGuide.bottomAnchor, constant: 8)
-            .portrait()
-            .leading(view.safeAreaLayoutGuide.leadingAnchor, constant: 8)
-            .top(topLeftView.bottomAnchor, constant: 8)
-            .height(topLeftView.heightAnchor)
-            .landscape()
-            .top(view.safeAreaLayoutGuide.topAnchor, constant: 8)
-            .leading(topLeftView.trailingAnchor, constant: 8)
-            .width(topLeftView.widthAnchor)
+        bottomRightView.cui.anchor(trailing: view.safeAreaLayoutGuide, bottom: view.safeAreaLayoutGuide, inset: 8)
+            .portrait().anchor(leading: view.safeAreaLayoutGuide, top: topLeftView.bottomAnchor, inset: 8).height(topLeftView)
+            .landscape().anchor(leading: topLeftView.trailingAnchor, top: view.safeAreaLayoutGuide, inset: 8).width(topLeftView)
     }
 }

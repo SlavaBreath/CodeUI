@@ -23,16 +23,7 @@ final class FifthViewController: UIViewController {
         
         view.add([topBar, bottomBar])
         
-        topBar.cui
-            .leading(view.leadingAnchor)
-            .top(view.topAnchor)
-            .trailing(view.trailingAnchor)
-            .bottom(view.safeAreaLayoutGuide.topAnchor, constant: -64)
-        
-        bottomBar.cui
-            .top(view.safeAreaLayoutGuide.bottomAnchor, constant: -44)
-            .leading(view.leadingAnchor)
-            .trailing(view.trailingAnchor)
-            .bottom(view.bottomAnchor)
+        topBar.cui.leading(view).top(view).trailing(view).bottom(view.safeAreaLayoutGuide.topAnchor, constant: -64)
+        bottomBar.cui.leading(view).top(view.safeAreaLayoutGuide.bottomAnchor, constant: -44).trailing(view).bottom(view)
     }
 }

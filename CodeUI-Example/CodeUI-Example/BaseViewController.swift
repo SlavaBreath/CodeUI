@@ -22,10 +22,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         view.add(descriptionLabel)
-        descriptionLabel.cui
-            .centerX(view.centerXAnchor)
-            .bottom(view.safeAreaLayoutGuide.bottomAnchor, constant: 20)
-            .leading(view.safeAreaLayoutGuide.leadingAnchor, constant: 8, relation: .greaterThanOrEqual)
+        descriptionLabel.cui.centerX(view).bottom(view.safeAreaLayoutGuide, constant: 20).leading(view.safeAreaLayoutGuide, constant: 8, relation: .greaterThanOrEqual)
     }
     
     final func configureDescription(_ text: String, color: UIColor = .black) {

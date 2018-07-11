@@ -15,17 +15,8 @@ extension CodeUI {
     /// - Parameter view: View providing size for target view
     /// - Returns: CodeUI instance for chaining
     @discardableResult
-    public func size(_ view: UIView) -> Self {
-        return width(view).height(view)
-    }
-    
-    /// Creates both `width` and `height` constraints
-    ///
-    /// - Parameter layoutGuide: LayoutGuide providing size for target view
-    /// - Returns: CodeUI instance for chaining
-    @discardableResult
-    public func size(_ layoutGuide: UILayoutGuide) -> Self {
-        return width(layoutGuide).height(layoutGuide)
+    public func size(_ provider: AnchorProvider) -> Self {
+        return width(provider).height(provider)
     }
     
     /// Creates both `width` and `height` constraints
