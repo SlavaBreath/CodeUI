@@ -26,7 +26,7 @@ final class ThirdViewController: BaseViewController {
         
         configureDescription("Two views equal heights\nTop in superview with no insets\nBottom in view safe area with no insets")
         
-        view.add(topView, bottomView)
+        view.add([topView, bottomView])
         
         topView.cui.anchor(leading: view.leadingAnchor, top: view.topAnchor, trailing: view.trailingAnchor, inset: 0)
         bottomView.cui.anchor(leading: view.safeAreaLayoutGuide.leadingAnchor, top: topView.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, inset: 0).height(topView.heightAnchor)

@@ -1,5 +1,5 @@
 //
-//  UIWindowConfiguration.swift
+//  UIWindow+Configuration.swift
 //  CodeUI
 //
 // Created by Vyacheslav Nagornyak on 5/29/18.

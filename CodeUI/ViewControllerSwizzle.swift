@@ -23,6 +23,10 @@ private func _swizzle(_ originalSelector: Selector, to newSelector: Selector, in
 
 extension UIViewController {
     static let swizzle: Void = {
+        _swizzle(#selector(UIViewController.viewWillLayoutSubviews),
+                 to: #selector(cui_viewWillLayoutSubviews),
+                 in: UIViewController.self)
+        
         _swizzle(#selector(UIViewController.willTransition(to:with:)),
                  to: #selector(cui_willTransition(to:with:)),
                  in: UIViewController.self)
@@ -32,6 +36,12 @@ extension UIViewController {
                  in: UIViewController.self)
     }()
     
+    @objc func cui_viewWillLayoutSubviews() {
+        self.cui_viewWillLayoutSubviews()
+        view.deactivate()
+        view.activate()
+    }
+    
     @objc func cui_willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         self.cui_willTransition(to: newCollection, with: coordinator)
         CodeUI.shared.adoptToNewSizeClasses(h: newCollection.horizontalSizeClass, v: newCollection.verticalSizeClass)
@@ -40,33 +50,6 @@ extension UIViewController {
     @objc func cui_viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         self.cui_viewWillTransition(to: size, with: coordinator)
         CodeUI.shared.adoptToNewSize(CGSize(width: size.width * UIScreen.main.scale, height: size.height * UIScreen.main.scale))
-    }
-}
-
-extension UIView {
-    static let swizzle: Void = {
-        _swizzle(#selector(layoutSubviews),
-                 to: #selector(cui_layoutSubviews),
-                 in: UIView.self)
-    }()
-    
-    @objc func cui_layoutSubviews() {
-        self.cui_layoutSubviews()
-        
-        activate()
-    }
-    
-    private func activate() {
-        guard let configuration = CodeUI.shared.configuration else { return }
-        
-        print("\(layout)\n\n")
-        
-        layout.deactivate(for: configuration)
-        layout.activate(for: configuration)
-    }
-    
-    func addConstraint(_ constraint: NSLayoutConstraint) {
-        layout.add(CodeUI.shared.targetConfiguration, constraint: constraint)
     }
 }
 

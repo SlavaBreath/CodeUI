@@ -10,10 +10,11 @@ import UIKit
 
 final class RootPageViewController: UIPageViewController {
     private let source: [UIViewController] = [
-//        FirstViewController(),
-//        SecondViewController(),
-//        ThirdViewController(),
-        FourthViewController()
+        FirstViewController(),
+        SecondViewController(),
+        ThirdViewController(),
+        FourthViewController(),
+        FifthViewController()
     ]
     
     override func viewDidLoad() {

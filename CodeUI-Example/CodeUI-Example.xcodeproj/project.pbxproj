@@ -12,6 +12,7 @@
 		B72D58A720F3AAE1004F73D6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72D58A620F3AAE1004F73D6 /* ThirdViewController.swift */; };
 		B72D58A920F3ADF1004F73D6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72D58A820F3ADF1004F73D6 /* FourthViewController.swift */; };
 		B72D58C520F3B602004F73D6 /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72D58C420F3B602004F73D6 /* RootPageViewController.swift */; };
+		B7EF0FDC20F638D700E300AF /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF0FDB20F638D700E300AF /* FifthViewController.swift */; };
 		F99651EE20DC4104004C44BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651ED20DC4104004C44BB /* AppDelegate.swift */; };
 		F99651F020DC4104004C44BB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99651EF20DC4104004C44BB /* FirstViewController.swift */; };
 		F99651F520DC4106004C44BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F99651F420DC4106004C44BB /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		B72D58A620F3AAE1004F73D6 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		B72D58A820F3ADF1004F73D6 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		B72D58C420F3B602004F73D6 /* RootPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPageViewController.swift; sourceTree = "<group>"; };
+		B7EF0FDB20F638D700E300AF /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		F99651EA20DC4104004C44BB /* CodeUI-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CodeUI-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99651ED20DC4104004C44BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F99651EF20DC4104004C44BB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				B72D58A220F3A6E4004F73D6 /* SecondViewController.swift */,
 				B72D58A620F3AAE1004F73D6 /* ThirdViewController.swift */,
 				B72D58A820F3ADF1004F73D6 /* FourthViewController.swift */,
+				B7EF0FDB20F638D700E300AF /* FifthViewController.swift */,
 				F99651F420DC4106004C44BB /* Assets.xcassets */,
 				F99651F620DC4106004C44BB /* LaunchScreen.storyboard */,
 				F99651F920DC4106004C44BB /* Info.plist */,
@@ -162,6 +165,7 @@
 				F99651F020DC4104004C44BB /* FirstViewController.swift in Sources */,
 				B72D58A920F3ADF1004F73D6 /* FourthViewController.swift in Sources */,
 				F99651EE20DC4104004C44BB /* AppDelegate.swift in Sources */,
+				B7EF0FDC20F638D700E300AF /* FifthViewController.swift in Sources */,
 				B72D58A720F3AAE1004F73D6 /* ThirdViewController.swift in Sources */,
 				B72D58A120F3A3D3004F73D6 /* BaseViewController.swift in Sources */,
 				B72D58C520F3B602004F73D6 /* RootPageViewController.swift in Sources */,

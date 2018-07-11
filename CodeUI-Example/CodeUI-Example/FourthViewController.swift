@@ -24,9 +24,9 @@ final class FourthViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureDescription("Two views inside view safe area with 8 offset\nEqual heights verticaly positioned in portrait\nEqual width horizontaly oriented in landscape")
+        configureDescription("Two views inside view safe area with 8 offset\nEqual heights vertically positioned in portrait\nEqual width horizontally positioned in landscape")
         
-        view.add(topLeftView, bottomRightView)
+        view.add([topLeftView, bottomRightView])
         
         topLeftView.cui
             .leading(view.safeAreaLayoutGuide.leadingAnchor, constant: 8)
