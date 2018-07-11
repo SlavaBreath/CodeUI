@@ -2,15 +2,13 @@
 This is a simple way to organize your UI from code only without using any Storyboards or XIBs for those who hates them as much as I
 
 # DISCLAIMER
-This is **WIP** lib. A lot of things can change in time. Any proposals are welcome.
+This is **WIP** lib. A lot of things can and probably will change. Any proposals are welcome.
 
 ## Requirements
-You need to use CUIViewController as your superclass for your UIVIewController subclasses
+At launch you need to pass AppDelegate window to CodeUI **before** call `window.rootViewController = ...`
 
 ## Usage
-In AppDelegate in `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)` you must set `CUI.shared.window = window` **before** `window.makeKeyAndVisible()` call.
-
-After that every view will have a `cui` property to call where you will find tons of helper funcs to setup your UI for every type of device **including** iPad multitask dimensions
+`UIView.cui` is an entry point to CodeUI engine.
 
 ## Device sizes support
 ### iPhones
